@@ -16,6 +16,9 @@ export default function Home() {
   const [loadedPost, setLoadedPost] = useState(false);
   const [logged, setLogged] = useState(false);
 
+  const queryParams = new URLSearchParams(window.location.search)
+  const username = queryParams.get("username")
+
   useEffect(() => {
     async function getPost() {
       try {
@@ -29,6 +32,11 @@ export default function Home() {
     }
 
     getPost();
+
+    if (localStorage.getItem(username)){
+      console.log(localStorage.getItem(username))
+      setLogged(true)
+    }
     
   }, []);
 
@@ -39,7 +47,7 @@ export default function Home() {
         <MDBRow className='row-cols-1 row-cols-md-4 g-4'>
           {
             loadedPost && !postError && (
-              posts.map((post) => <Card logged={logged} key={post._id} post={post} /> )
+              posts.map((post) => <Card key={post._id} logged={logged} post={post} /> )
             )
           }
         </MDBRow>

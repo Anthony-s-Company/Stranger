@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {registerUser} from "../services/Account"
 import { useState } from 'react';
-import { Navigate, createSearchParams } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 
 const theme = createTheme();
 
