@@ -2,7 +2,6 @@
 import {
   MDBCol,
   MDBCard,
-  MDBCardImage,
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
@@ -19,11 +18,6 @@ export default function Card({post}) {
     <>
         <MDBCol>
           <MDBCard className='h-100'>
-            {/* <MDBCardImage
-              src='https://mdbootstrap.com/img/new/standard/city/044.webp'
-              alt='...'
-              position='top'
-            /> */}
             <MDBCardBody>
               <MDBCardTitle>{post.title}</MDBCardTitle>
               <MDBCardText>
